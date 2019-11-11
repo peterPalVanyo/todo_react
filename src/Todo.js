@@ -1,8 +1,15 @@
 import React, {Component} from 'react'
+import './Todo.css'
 
 class Todo extends Component {
     render() {
-        return <p>from the todo</p>
+        return (
+            <div className='Todo'>
+                <p>{this.props.text}</p>
+                <button>X</button>
+                <button>Y</button>
+            </div>
+        )
     }
 }
 
