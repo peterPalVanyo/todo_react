@@ -11,14 +11,18 @@ class TodoList extends Component {
     };
     this.displayTodos = this.displayTodos.bind(this);
     this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this)
   }
   addTodo(todo) {
     this.setState({ todos: [...this.state.todos, todo] });
   }
+  removeTodo(id) {
+      this.setState({todos: this.state.todos.filter(todo => todo.id !== id)})
+  }
   displayTodos() {
     return this.state.todos.map(todo => (
       <li key={todo.id}>
-        <Todo text={todo.text} key={todo.id} />
+        <Todo text={todo.text} key={todo.id} removeTodo={this.removeTodo} id={todo.id} />
       </li>
     ));
   }

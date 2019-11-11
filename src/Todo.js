@@ -2,15 +2,18 @@ import React, {Component} from 'react'
 import './Todo.css'
 
 class Todo extends Component {
-
+    constructor(props) {
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick() {
+        this.props.removeTodo(this.props.id)
+    }
     render() {
-        const handleClick = function() {
-            console.log()
-        }
         return (
             <div className='Todo'>
                 <p>{this.props.text}</p>
-                <button onClick={handleClick} >X</button>
+                <button onClick={this.handleClick} >X</button>
                 <button>Y</button>
             </div>
         )
