@@ -16,7 +16,7 @@ class TodoList extends Component {
     this.addTodo = this.addTodo.bind(this)
   }
   addTodo(todo) {
-    console.log(todo)
+    this.setState({todos: [...this.state.todos, todo] })
   }
   displayTodos() {
     return this.state.todos.map(todo => (
