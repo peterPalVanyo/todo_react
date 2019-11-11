@@ -9,6 +9,7 @@ class Todo extends Component {
     this.toggleEditing = this.toggleEditing.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
+    this.handleCompleted = this.handleCompleted.bind(this)
   }
   handleClick() {
     this.props.removeTodo(this.props.id);
@@ -24,6 +25,9 @@ class Todo extends Component {
   toggleEditing() {
       this.setState({isEditing: !this.state.isEditing})
   }
+  handleCompleted() {
+      this.props.toggleComplete(this.props.id)
+  }
   render() {
     let result;
     if (this.state.isEditing) {
@@ -38,7 +42,7 @@ class Todo extends Component {
     } else {
       result = (
         <div className="Todo">
-          <p>{this.props.text}</p>
+          <li className={this.props.iscompleted ? 'completed' : '' } onClick={this.handleCompleted} >{this.props.text}</li>
           <button onClick={this.handleClick}>X</button>
           <button onClick={this.toggleEditing} >Y</button>
         </div>
