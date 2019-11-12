@@ -6,7 +6,7 @@
 
 html,
 body {
-  background: linear-gradient(90deg, #69b7eb, #b3dbd3);
+  background: linear-gradient(90deg, #b3dbd3, #69b7eb);
   font-size: 1.1rem;
   font-family: "Quicksand", sans-serif;
   height: 100%;
