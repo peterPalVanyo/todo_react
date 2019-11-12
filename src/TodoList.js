@@ -57,9 +57,9 @@ class TodoList extends Component {
   render() {
     return (
       <div className="TodoList">
-        <h2>from the TodoList</h2>
-        <NewTodoForm addTodo={this.addTodo} />
+      <h1>Todo List <span>React Todo App for practice</span> </h1>
         <ul>{this.displayTodos()}</ul>
+        <NewTodoForm addTodo={this.addTodo} />
       </div>
     );
   }
